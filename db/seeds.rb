@@ -8,7 +8,7 @@
 
 user = User.create(name: 'Nilay Anand', email: 'nilayanand@gmail.com')
 Incident.create(
-  title: "It's the Paw-lidays! A Dog-Friendly Party",
+  title: "Its the Paw-lidays A Dog-Friendly Party",
   description: 'Events are nothing without guests, please attend',
   severity: :sev1,
   creator: user

@@ -16,6 +16,6 @@ class Incident < ApplicationRecord
   private
 
   def slack_sync
-    SlackSyncJob.perform_async(self)
+    SlackSyncJob.perform_async(self.id)
   end
 end

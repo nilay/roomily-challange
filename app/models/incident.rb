@@ -11,7 +11,7 @@ class Incident < ApplicationRecord
   }, scope: true, default: 1, prefix: true
 
   def channel_name
-    "#{title.gsub(/\W/, '_')[0..40]}_#{id}"
+    "#{title.gsub(/\W/, '_')[0..40]}_#{id}".downcase
   end
   private
 

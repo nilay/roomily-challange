@@ -16,6 +16,11 @@ class Incident < ApplicationRecord
   private
 
   def slack_sync
-    SlackSyncJob.perform_async(self.id)
+    # We are not going with background job as Render server has issue with SideKiq
+    # TODO: Fix SideKiq and use background job to sync on Slack
+    # SlackSyncJob.perform_async(self.id)
+
+    # Temporarily use Service class
+    SlackService.call(self.id)
   end
 end
